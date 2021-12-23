@@ -7,7 +7,7 @@ const taskRoutes = require('./routes/taskRoutes');
 
 const app = express();
 
-const dbURI = "mongodb+srv://ravindu0504:test123@tasks.wt1pj.mongodb.net/tasks?retryWrites=true&w=majority"
+// const dbURI = "mongodb+srv://ravindu0504:test123@tasks.wt1pj.mongodb.net/tasks?retryWrites=true&w=majority"
 
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedtopology:true})
   .then((result)=> {
