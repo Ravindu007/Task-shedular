@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- header -->
+<%- include('./partials/header.ejs')  %> 
+
+<body>
+
+  
+  <div class="container">   
+    <!--header  -->
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1>Daily Task Schedular</h1>
+      </div>
+    </div>
+  </div>
+
+    <!-- navbar-->
+    <div class="row">
+      <div class="col-12">
+        <%- include('./partials/nav.ejs')  %> 
+      </div>
+    </div>
+
+    
+  <div class="container">
+
+    <div class="tasks">
+      <h2>ALL tasks</h2>
+      <% if(tasks.length > 0) { %>
+        <% tasks.forEach(task => { %>
+           <a class="single" href="/tasks/<%= task._id %>">
+            <h3><%= task.title %> </h3>
+            <p><%= task.snippet %> </p> 
+           </a>
+        <% }) %>    
+      <% } %>   
+    </div>
+
+  </div>
+
+  <!-- scripts -->
+  <script src="../public/js/bootstrap.js"></script>
+  <script src="../public/js/jquery.js"></script>
+  <script src="../public/script.js"></script>
+</body>
+</html>

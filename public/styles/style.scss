@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Shizuru&display=swap");
+
+* {
+  font-family: "Lato", sans-serif;
+  box-sizing: border-box;
+  color: black;
+  font-weight: 900;
+}
+
+.navbar {
+  .navbar-nav {
+    width: 100%;
+    background-color: yellow;
+    display: flex;
+    justify-content: flex-end;
+    .nav-item {
+      .nav-link {
+        font-size: 25px;
+      }
+    }
+  }
+}
+
+.tasks {
+  h2 {
+    color: teal;
+    font-weight: bolder;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.details {
+  .content {
+    h2 {
+      color: red;
+    }
+  }
+}

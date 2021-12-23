@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- header -->
+<%- include('./partials/header.ejs')  %> 
+
+<body>
+  <!-- nav -->
+  <%- include('./partials/nav.ejs')  %> 
+
+  <div class="details">
+    <div class="content">
+      <h2><%= task.title %> </h2>
+      <p><%= task.snippet %></p>
+    </div>
+  </div>
+  <div class="delete">
+    <button class="btn btn-danger" id="delete" data-doc="<%= task._id%> ">Delete</button>
+  </div>
+
+
+  <!-- script -->
+  <script>
+    const d1 = document.querySelector('#delete');
+    d1.addEventListener('click', (e) => {
+      const endpoint = `/tasks/${d1.dataset.doc}`;
+
+
+      fetch(endpoint, {
+        method: 'DELETE'
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log('deleted');
+          window.location.href = data.redirect;
+        })
+        .catch(err => console.log(err));
+    })
+  </script>
+</body>
+</html>
